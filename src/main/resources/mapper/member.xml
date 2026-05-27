@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.study.mybatisstudy.member.dao.MemberDAO">
+
+    <insert id="insertMember" parameterType="com.study.mybatisstudy.member.vo.MemberVO">
+        INSERT INTO member (
+            member_id,z
+            name,
+            email,
+            age
+        )
+        VALUES (
+            #{memberId},
+            #{name},
+            #{email},
+            #{age}
+        )
+    </insert>
+
+    <select id="selectMember" parameterType="string" resultType="com.study.mybatisstudy.member.vo.MemberVO">
+        SELECT
+            member_id AS memberId,
+            name,
+            email,
+            age
+        FROM member
+        WHERE member_id = #{memberId}
+    </select>
+
+    <select id="selectMemberList" resultType="com.study.mybatisstudy.member.vo.MemberVO">
+        SELECT
+            member_id AS memberId,
+            name,
+            email,
+            age
+        FROM member
+        ORDER BY member_id
+    </select>
+
+</mapper>
