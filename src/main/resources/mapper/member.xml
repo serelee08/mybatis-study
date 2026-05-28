@@ -8,7 +8,7 @@
 
     <insert id="insertMember" parameterType="com.study.mybatisstudy.member.vo.MemberVO">
         INSERT INTO member (
-            member_id,z
+            member_id,
             name,
             email,
             age
